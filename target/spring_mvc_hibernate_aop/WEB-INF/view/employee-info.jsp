@@ -6,12 +6,12 @@
         employeeInfo
     </title>
     <style>
-        .title{
+        .fontText{
             font-family: Arial;
-            margin-left: 2%;
         }
         input[type=text], select {
-            width: 40%;
+            font-size: 16px;
+            width: 90%;
             padding: 12px 20px;
             margin-right: 8px;
             display: inline-block;
@@ -37,7 +37,6 @@
         .btn:hover{
             background-color: limegreen;
             color: white;
-
         }
         .btn:active{
             opacity: 0.7;
@@ -45,15 +44,16 @@
         div {
             margin-left: 2%;
             background-color: #f2f2f2;
+            width: 35%;
         }
     </style>
 </head>
 <body >
-<h2 class="title">Employee info</h2>
+<h2 class="fontText">Employee info</h2>
 <div>
     <input type="button" class="btn" value="Back"
            onclick="window.location.href='allEmployees'"  />
-<form:form action="saveEmployee" modelAttribute="employee" cssClass="title">
+<form:form action="saveEmployee" modelAttribute="employee" cssClass="fontText">
     <form:hidden path="id"/>
 
     Name<form:input path="name"/>
@@ -68,7 +68,7 @@
     Salary<form:input path="salary"/>
     <form:errors path="salary"/>
     <br><br>
-    <input type="submit" class="btn" value="Submit">
+    <input type="submit" class="btn" style="width: 90%" value="Submit">
 
 </form:form>
 </div>

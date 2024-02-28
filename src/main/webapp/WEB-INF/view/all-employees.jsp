@@ -63,7 +63,7 @@
     .btn:active{
         opacity: 0.7;
     }
-    .btn{
+    .addBtn{
         font-size: 16px;
         background-color: white;
         color: limegreen;
@@ -81,12 +81,12 @@
         left: 5%;
 
     }
-    .btn:hover{
+    .addBtn:hover{
         background-color: limegreen;
         color: white;
 
     }
-    .btn:active{
+    .addBtn:active{
         opacity: 0.7;
     }
 
