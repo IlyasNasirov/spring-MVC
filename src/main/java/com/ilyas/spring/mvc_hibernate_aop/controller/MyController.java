@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -20,7 +21,6 @@ public class MyController {
     public String showAllEmployees(Model model){
         List<Employee> allEmployees = employeeService.getAllEmployees();
         model.addAttribute("allEmps",allEmployees);
-
         return "all-employees";
     }
     @RequestMapping("/addNewEmployee")
@@ -30,15 +30,20 @@ public class MyController {
         return "employee-info";
     }
     @RequestMapping("/saveEmployee")
-    public String saveEmployee(@ModelAttribute("employee") Employee employee, BindingResult bindingResult){
+    public String saveEmployee(@Valid @ModelAttribute("employee") Employee employee,
+                               BindingResult bindingResult){
+       if(bindingResult.hasErrors()){
+           return "employee-info";
+       }
+       else{
         employeeService.saveEmployee(employee);
         return "redirect:/allEmployees";
+       }
     }
     @RequestMapping("/updateInfo")
-    public String updateEmployee(@RequestParam("empId") int id,Model model){
+    public String updateEmployee(@RequestParam("empId") int id, Model model){
         Employee employee=employeeService.getEmployee(id);
         model.addAttribute("employee",employee);
-
         return "employee-info";
     }
 

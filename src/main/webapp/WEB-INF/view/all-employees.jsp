@@ -29,7 +29,7 @@
     }
 
     .fstColumnStyle{
-        color: limegreen;
+        color: #05c705;
         padding-top: 10px;
         padding-bottom: 10px;
         padding-left: 8px;
@@ -39,13 +39,12 @@
         margin-bottom: 8px;
         font-size: 20px;
     }
-    .btn{
+    .updateBtn{
         font-size: 16px;
         background-color: white;
-        color: limegreen;
+        color: dodgerblue;
         border-width: 2px;
         border-style: none;
-        border-color: limegreen;
         padding-top: 10px;
         padding-bottom: 10px;
         padding-left: 16px;
@@ -55,21 +54,44 @@
         margin-right: 10px;
         transition: background-color 0.15s, color 0.15s;
     }
-    .btn:hover{
-        background-color: limegreen;
+    .updateBtn:hover{
+        background-color: dodgerblue;
         color: white;
 
     }
-    .btn:active{
+    .updateBtn:active{
+        opacity: 0.7;
+    }
+    .deleteBtn{
+        font-size: 16px;
+        background-color: white;
+        color: #e70000;
+        border-width: 2px;
+        border-style: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 16px;
+        padding-right: 16px;
+        border-radius: 2px;
+        cursor:pointer;
+        margin-right: 10px;
+        transition: background-color 0.15s, color 0.15s;
+    }
+    .deleteBtn:hover{
+        background-color: #e70000;
+        color: white;
+
+    }
+    .deleteBtn:active{
         opacity: 0.7;
     }
     .addBtn{
         font-size: 16px;
         background-color: white;
-        color: limegreen;
+        color: #05c705;
         border-width: 2px;
         border-style: solid;
-        border-color: limegreen;
+        border-color: #05c705;
         padding-top: 8px;
         padding-bottom: 8px;
         padding-left: 20px;
@@ -82,7 +104,7 @@
 
     }
     .addBtn:hover{
-        background-color: limegreen;
+        background-color: #05c705;
         color: white;
 
     }
@@ -118,9 +140,9 @@
             <td>${emp.department}</td>
             <td>${emp.salary}</td>
             <td align="center">
-                <input type="button" class="btn" value="Update"
-                onclick="window.location.href='${updateButton}'" />
-                <input type="button" class="btn" value="Delete"
+                <input type="button" class="updateBtn" value="Update"
+                       onclick="window.location.href='${updateButton}'" />
+                <input type="button" class="deleteBtn" value="Delete"
                        onclick="window.location.href='${deleteButton}'"/>
             </td>
         </tr>

@@ -22,10 +22,10 @@
         .btn{
             font-size: 16px;
             background-color: white;
-            color: limegreen;
+            color: #05c705;
             border-width: 2px;
             border-style: solid;
-            border-color: limegreen;
+            border-color: #05c705;
             padding-top: 8px;
             padding-bottom: 8px;
             padding-left: 20px;
@@ -35,7 +35,7 @@
             transition: background-color 0.15s, color 0.15s;
         }
         .btn:hover{
-            background-color: limegreen;
+            background-color: #05c705;
             color: white;
         }
         .btn:active{
@@ -57,16 +57,16 @@
     <form:hidden path="id"/>
 
     Name<form:input path="name"/>
-    <form:errors path="name"/>
+    <form:errors path="name" cssStyle="color: red"/>
     <br><br>
     Surname<form:input  path="surname"/>
-    <form:errors path="surname"/>
+    <form:errors path="surname" cssStyle="color: red"/>
     <br><br>
     Department<form:input path="department"/>
-    <form:errors path="department"/>
+    <form:errors path="department" cssStyle="color: red"/>
     <br><br>
     Salary<form:input path="salary"/>
-    <form:errors path="salary"/>
+    <form:errors path="salary" cssStyle="color: red"/>
     <br><br>
     <input type="submit" class="btn" style="width: 90%" value="Submit">
 
